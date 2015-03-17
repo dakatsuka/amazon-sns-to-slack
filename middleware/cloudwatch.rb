@@ -1,6 +1,6 @@
 module AmazonSnsToSlack
-  module Notification
-    class CloudWatch < Base
+  module Middleware
+    class CloudWatch
       def call(json)
       end
     end

@@ -1,11 +1,11 @@
 module AmazonSnsToSlack
-  module Notification
-    class Autoscaling < Base
+  module Middleware
+    class Autoscaling
       def call(json)
         begin
           message = JSON.parse(json["Message"])
 
-          return unless message["AutoScalingGroupName"]
+          return nil unless message["AutoScalingGroupName"]
 
           payload = {
             "username" => "Amazon EC2 Autoscaling"
@@ -89,8 +89,9 @@ module AmazonSnsToSlack
             }]
           end
 
-          send payload
+          payload
         rescue
+          nil
         end
       end
     end
