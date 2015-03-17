@@ -12,7 +12,7 @@ module AmazonSnsToSlack
             "attachments" => [
               {
                 "fallback" => json["Message"],
-                "text" => json["Subject"] || "CloudWatch Notification",
+                "text" => message["NewStateReason"],
                 "fields" => [
                   {
                     "title" => "Alarm",
@@ -23,11 +23,6 @@ module AmazonSnsToSlack
                     "title" => "Status",
                     "value" => message["NewStateValue"],
                     "short" => true
-                  },
-                  {
-                    "title" => "Reason",
-                    "value" => message["NewStateReason"],
-                    "short" => false
                   }
                 ]
               }
@@ -39,7 +34,6 @@ module AmazonSnsToSlack
             payload["attachments"]["color"] = "#7CD197"
           when "ALARM"
             payload["attachments"]["color"] = "#FF0000"
-            payload["attachments"]["text"] = "@channel " + payload["attachments"]["text"]
           end
 
           payload
