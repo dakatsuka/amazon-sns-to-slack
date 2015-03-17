@@ -19,7 +19,7 @@ module AmazonSnsToSlack
       end
 
       def send(json, logger)
-        @middlewares.each do |middleware|
+        @@middlewares.each do |middleware|
           instance = middleware.new
           payload = instance.call(json)
 
