@@ -77,7 +77,7 @@ module AmazonSnsToSlack
         else
           raise FieldNotFoundException.new("Field 'Type' not found exception")
         end
-      rescue JSON::ParseError => e
+      rescue JSON::ParserError => e
         logger.info e.message
         status 422
       rescue FailedSubscribeException => e
