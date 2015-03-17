@@ -31,9 +31,9 @@ module AmazonSnsToSlack
 
           case message["NewStateValue"]
           when "OK"
-            payload["attachments"]["color"] = "#7CD197"
+            payload["attachments"][0]["color"] = "#7CD197"
           when "ALARM"
-            payload["attachments"]["color"] = "#FF0000"
+            payload["attachments"][0]["color"] = "#FF0000"
           end
 
           payload
