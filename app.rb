@@ -69,7 +69,7 @@ module AmazonSnsToSlack
 
         case json["Type"]
         when "SubscriptionConfirmation"
-          Subscription.subscribe(json, logger)
+          Subscription.subscribe(json)
           status 200
         when "Notification"
           Notification.send(json, logger)
