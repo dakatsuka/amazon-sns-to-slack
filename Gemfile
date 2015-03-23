@@ -1,11 +1,12 @@
 source "https://rubygems.org"
 
-ruby '2.2.0'
+ruby '2.2.1'
 
 gem 'sinatra'
 
-group :development do
+group :development, :test do
   gem 'foreman'
   gem 'shotgun'
   gem 'heroku'
+  gem 'rspec'
 end
