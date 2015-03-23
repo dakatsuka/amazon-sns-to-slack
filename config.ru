@@ -3,10 +3,10 @@ require 'bundler/setup'
 Bundler.require
 
 require './app'
-require './middleware/autoscaling'
-require './middleware/cloudwatch'
+require './service/autoscaling'
+require './service/cloudwatch'
 
-AmazonSnsToSlack::Notification.use AmazonSnsToSlack::Middleware::Autoscaling
-AmazonSnsToSlack::Notification.use AmazonSnsToSlack::Middleware::CloudWatch
+AmazonSnsToSlack::Notification.use AmazonSnsToSlack::Service::Autoscaling
+AmazonSnsToSlack::Notification.use AmazonSnsToSlack::Service::CloudWatch
 
 run AmazonSnsToSlack::Application
