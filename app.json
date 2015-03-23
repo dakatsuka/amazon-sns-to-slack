@@ -1,0 +1,10 @@
+{
+  "name": "amazon-sns-to-slack",
+  "repository": "https://github.com/dakatsuka/amazon-sns-to-slack",
+  "env": {
+    "SLACK_CHANNEL": "#channel",
+    "SLACK_USERNAME": "Amazon SNS",
+    "SLACK_INCOMING_WEBHOOK_URL": "https://",
+    "SLACK_ICON_URL": "https://i.imgur.com/zUUsRLa.png"
+  }
+}
