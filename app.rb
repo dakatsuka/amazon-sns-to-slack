@@ -7,20 +7,20 @@ module AmazonSnsToSlack
   class FailedSubscribeException < StandardError; end
 
   class Notification
-    @@middlewares = []
+    @@services = []
 
     class << self
       def use(klass)
-        @@middlewares << klass
+        @@services << klass
       end
 
-      def middlewares
-        @@middlewares
+      def services
+        @@services
       end
 
       def send(json, logger)
-        @@middlewares.each do |middleware|
-          instance = middleware.new
+        @@services.each do |service|
+          instance = service.new
           payload = instance.call(json)
 
           if payload && payload.length > 0
