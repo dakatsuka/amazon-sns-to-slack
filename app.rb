@@ -59,7 +59,7 @@ module AmazonSnsToSlack
     end
 
     get '/' do
-      'Ok'
+      'OK'
     end
 
     post '/' do

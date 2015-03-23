@@ -6,6 +6,7 @@ gem 'sinatra'
 
 group :development, :test do
   gem 'rake'
+  gem 'rack-test', require: 'rack/test'
   gem 'foreman'
   gem 'shotgun'
   gem 'heroku'
