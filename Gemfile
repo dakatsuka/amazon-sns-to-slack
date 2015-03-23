@@ -5,6 +5,7 @@ ruby '2.2.1'
 gem 'sinatra'
 
 group :development, :test do
+  gem 'rake'
   gem 'foreman'
   gem 'shotgun'
   gem 'heroku'
